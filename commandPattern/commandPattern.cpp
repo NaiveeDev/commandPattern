@@ -9,9 +9,7 @@ class Command {
 
 public:
     virtual void app() = 0;
-
-	~Command() {
-	}
+	virtual ~Command() {}
 
 };
 
