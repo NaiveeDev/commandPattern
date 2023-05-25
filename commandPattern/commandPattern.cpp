@@ -3,7 +3,7 @@
 #include <map>
 
 
-// Command Pattern (Бот телеграм)
+// Command Pattern
 
 class Command {
 
@@ -92,7 +92,7 @@ int main() {
 	
 	setlocale(LC_ALL, "ru");
 
-	//virtual tg bot
+	
 
 	std::vector < std::map<std::string, std::string>> userDB{
 
