@@ -66,6 +66,12 @@ class Sender {
 
 public:
 
+	~Sender() {
+		for (Command* command : commands) {
+			delete command;
+		}
+	}
+
 	void addCommand(Command* command) {
 		commands.push_back(command);
 	}
@@ -88,17 +94,18 @@ int main() {
 
 	//virtual tg bot
 
-	std::vector < std::map<std::string, std::string>> UserDB{
+	std::vector < std::map<std::string, std::string>> userDB{
 
 		{{"nick", "Kirill"}, {"access", "Administrator"}},
 		{{"nick", "Anna"}, {"access", "Default"}},
 		{{"nick", "Kira"}, {"access", "Default"}}
+		{{"nick", "Nikita"}, {"access", "Director"}}
 
 	};
 
 
 
-	Command* app1 = new DBAddCommand(UserDB);
+	Command* app1 = new DBAddCommand(userDB);
 	Command* app2 = new RegisterCommand("User1");
 	Command* app3= new CheckUserCommand("User2");
 
